@@ -1,0 +1,25 @@
+{
+  "name": "burger-restaurant",
+  "version": "1.0.0",
+  "description": "Web application with Express, Handlebars & MySQL",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robjpar/burger-restaurant.git"
+  },
+  "author": "R.J.P.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robjpar/burger-restaurant/issues"
+  },
+  "homepage": "https://github.com/robjpar/burger-restaurant#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.2",
+    "mysql": "^2.17.1"
+  }
+}
