@@ -21,3 +21,8 @@ connection.connect((err) => {
 });
 
 module.exports = connection;
+
+// Testing...
+if (require.main === module) {
+  connection.end();
+}
