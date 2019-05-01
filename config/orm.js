@@ -1,10 +1,12 @@
 const connection = require('./connection.js');
 
 const orm = {
-  selectAll: (table, cb) => {
+  selectAll: (table, columnFirst, columnSecond, cb) => {
     connection.query(
-      'SELECT * FROM ??',
-      [table],
+      // Sorting by `columnFirst` if not null, otherwise by 
+      // `columnSecond`
+      'SELECT * FROM ?? ORDER BY COALESCE(??, ??) DESC',
+      [table, columnFirst, columnSecond],
       (err, results) => {
         if (err) return console.log(`!!! Could not query: ${err}`);
         cb(results);

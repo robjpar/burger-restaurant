@@ -2,7 +2,7 @@ const orm = require('../config/orm.js');
 
 const burgers = {
   selectAll: (cb) => {
-    orm.selectAll('burgers', (results) => cb(results));
+    orm.selectAll('burgers', 'delivered_at', 'ordered_at', (results) => cb(results));
   },
   insertOne: (burger_name, cb) => {
     orm.insertOne('burgers', 'burger_name', burger_name, (results) =>
