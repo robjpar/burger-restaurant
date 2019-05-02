@@ -11,11 +11,8 @@ const connectionConfig = {
 };
 
 // Create a connection to JawsDB MySQL (Heroku) or local connection
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-  connection = mysql.createConnection(connectionConfig);
-}
+const connection = process.env.JAWSDB_URL ?
+  mysql.createConnection(process.env.JAWSDB_URL) : mysql.createConnection(connectionConfig);
 
 connection.connect((err) => {
   if (err) return console.log(`!!! Could not connect: ${err}`);
