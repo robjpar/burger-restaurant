@@ -1,3 +1,5 @@
+-- Initial data for the database
+
 USE burger_db;
 
 INSERT INTO burgers

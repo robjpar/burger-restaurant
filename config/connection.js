@@ -1,6 +1,7 @@
 require('dotenv').config();
 const mysql = require('mysql');
 
+// Connection configuration
 const connectionConfig = {
   host: process.env.HOST,
   port: process.env.PORT_DB,
@@ -9,6 +10,7 @@ const connectionConfig = {
   database: 'burger_db'
 };
 
+// Create a connection to JawsDB MySQL (Heroku) or local connection
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {

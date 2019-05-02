@@ -1,5 +1,6 @@
 const connection = require('./connection.js');
 
+// Definition of the Object Relational Mapping
 const orm = {
   selectAll: (table, columnFirst, columnSecond, cb) => {
     connection.query(

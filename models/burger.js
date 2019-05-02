@@ -1,5 +1,6 @@
 const orm = require('../config/orm.js');
 
+// Definition of the Model
 const burgers = {
   selectAll: (cb) => {
     orm.selectAll('burgers', 'delivered_at', 'ordered_at', (results) => cb(results));
