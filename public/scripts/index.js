@@ -35,7 +35,8 @@ $(() => {
   });
 
   // Functionality of the "Place Order" button
-  $('#order-button').click(() => {
+  $('#order-button').click((event) => {
+    event.preventDefault();
     const newBurger = {
       burgerName: $('#burger-select').val()
     };
@@ -43,7 +44,8 @@ $(() => {
   });
 
   // Functionality of the "Deliver Order" button
-  $('.deliver-button').click(function() {
+  $('.deliver-button').click(function(event) {
+    event.preventDefault();
     const burgerId = $(this).data('id');
     $.ajax(`/api/burgers/${burgerId}`, {
       type: 'PUT'
@@ -51,7 +53,8 @@ $(() => {
   });
 
   // Functionality of the "Cancel Order" button
-  $('.cancel-button').click(function() {
+  $('.cancel-button').click(function(event) {
+    event.preventDefault();
     const burgerId = $(this).data('id');
     $.ajax(`/api/burgers/${burgerId}`, {
       type: 'DELETE'
@@ -59,7 +62,8 @@ $(() => {
   });
 
   // Functionality of the "Delete" button
-  $('.delete-button').click(function() {
+  $('.delete-button').click(function(event) {
+    event.preventDefault();
     const burgerId = $(this).data('id');
     $.ajax(`/api/burgers/${burgerId}`, {
       type: 'DELETE'
